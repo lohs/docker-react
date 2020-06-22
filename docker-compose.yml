@@ -1,0 +1,26 @@
+version: '3'
+services:
+    web:
+        restart: unless-stopped
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        ports:
+            - "3000:3000"
+        volumes:
+            #use container's node module instead
+            - /app/node_modules
+            #map all other files to pwd
+            - .:/app
+        #fix react app exiting when starting with docker compose
+        stdin_open: true
+
+    tests:
+        restart: unless-stopped
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        volumes: 
+                - /app/node_modules
+                - .:/app
+        command: ["npm", "run", "test"]

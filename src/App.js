@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hi! Docker Compose reloads on save in a container!.
+          Hi! This app is deployed to AWS using Travis-CI!
         </p>
         <a
           className="App-link"

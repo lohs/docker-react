@@ -1,0 +1,12 @@
+language: generic
+sudo: required
+services:
+    - docker
+
+before_install:
+    # convention is to tag image w/ docker_username/image_name
+    - docker build -t docker-react -f Dockerfile.dev .
+
+script:
+    # run tests
+    - docker run -e CI=true docker-react npm run test

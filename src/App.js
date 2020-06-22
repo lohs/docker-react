@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          I was changed on the feature branch!
+          The FitnessGram Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. 
         </p>
         <a
           className="App-link"
